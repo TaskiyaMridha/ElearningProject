@@ -34,7 +34,7 @@ include('./mainInclude/header.php');
                                 &#8377 200
                             </span>
                         </p>
-                        <a href="#" class="btn btn-primary text-white font-weight-bolder float-right">Enroll</a>
+                        <a href="coursedetails.php" class="btn btn-primary text-white font-weight-bolder float-right">Enroll</a>
                     </div>
                 </div>
             </a>

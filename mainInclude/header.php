@@ -18,6 +18,8 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/44f557ccce.js"></script>
     <!-- Student Testimonial  slider css -->
+    <!-- Font Awesome CSS  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
 
 
     <!-- Custom css -->

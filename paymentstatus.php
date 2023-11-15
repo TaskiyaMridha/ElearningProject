@@ -27,6 +27,14 @@ include('./mainInclude/header.php');
 </div>
 <!-- end main content -->
 
+<!-- Start Contact Us -->
+
+<?php
+include('./contact.php');
+?>
+
+
+<!-- End Contact Us -->
 
 
 
