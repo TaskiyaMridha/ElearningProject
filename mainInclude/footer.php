@@ -57,7 +57,8 @@
                      </form>
              </div>
              <div class="modal-footer">
-                 <button type="button" class="btn btn-primary" id="stuLoginBtn">Login</button>
+                <small id="statusLogMsg"></small>
+                 <button type="button" class="btn btn-primary" id="stuLoginBtn" onclick="checkStuLogin()">Login</button>
                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
              </div>
          </div>
@@ -81,19 +82,18 @@
 
                      <div class="form-group">
                          <i class="fas fa-envelope"></i>
-                         <label for="adminLogemail" class="pl-2 font-weight-bold">Email</label>
+                         <label for="adminLogEmail" class="pl-2 font-weight-bold">Email</label>
                          <input type="email" class="form-control" placeholder="Email" name="adminLogemail" id="adminLogemail">
                      </div>
                      <div class="form-group">
                          <i class="fas fa-key"></i>
-                         <label for="adminLogpass" class="pl-2 font-weight-bold">Password</label>
+                         <label for="adminLogPass" class="pl-2 font-weight-bold">Password</label>
                          <input type="password" class="form-control" placeholder="Password" name="adminLogpass" id="adminLogpass">
                      </div>
                  </form>
              </div>
              <div class="modal-footer">
-                 <button type="button" class="btn btn-primary" id="adminLoginBtn">Login</button>
-                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+             <button type="button" id="adminLoginBtn" class="btn btn-primary" onclick="checkAdminLogin()">Login</button>                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
              </div>
          </div>
      </div>
@@ -118,6 +118,10 @@
 
  <!-- Student Ajax Call Javascript -->
  <script type="text/javascript" src="js/ajaxrequest.js"></script>
+
+  <!-- Admin Ajax Call Javascript -->
+
+ <script type="text/javascript" src="js/adminajaxrequest.js"></script>
 
 
 

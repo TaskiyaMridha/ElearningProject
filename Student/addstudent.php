@@ -1,4 +1,7 @@
 <?php
+if(!isset($_SESSION)){
+session_start();
+}
 include_once('../dbConnection.php');
 //checking email already registered
 if(isset($_POST['checkemail'])&& isset($_POST['stuemail'])){
@@ -24,4 +27,27 @@ if (isset($_POST['stusignup']) && isset($_POST['stuname']) && isset($_POST['stue
         echo json_encode("Failed");
     }
 }
+
+// student login verification
+if(!isset($_SESSION['is_login'])){
+if (isset($_POST['checklogmail']) && isset($_POST['stuLogEmail']) && isset($_POST['stuLogpass'])) {
+    $stuLogEmail = $_POST['stuLogEmail'];
+    $stuLogpass = $_POST['stuLogpass'];
+
+    $sql = "SELECT stu_email, stu_pass FROM student WHERE stu_email = '".$stuLogEmail."' AND stu_pass='".$stuLogpass."'";
+
+    $result= $conn->query($sql);
+
+    $row = $result->num_rows;
+
+    if ($row === 1) {
+        $_SESSION['is_login'] = true;
+        $_SESSION['stuLogEmail'] = $stuLogEmail;
+        echo json_encode($row);
+    } else if ($row === 0){
+        echo json_encode($row);
+    }
+}
+}
+
 ?>

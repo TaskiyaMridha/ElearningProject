@@ -17,8 +17,18 @@ include('./mainInclude/header.php');
             <h1 class="my-content">Welcome To SmartSchool</h1>
             <small class="my-content">Learn and Implement</small>
             <br>
-
-            <a href="#" class="btn btn-danger "data-bs-toggle="modal" data-bs-target="#stuRegModalCenter">Get Started</a>
+<?php
+if(!isset($_SESSION['is_login'])){
+  echo'
+  <a href="#" class="btn btn-danger  mt-3"data-bs-toggle="modal" data-bs-target="#stuRegModalCenter">Get Started</a>
+  
+  ';  
+}else{
+    echo'
+    <a href="#" class="btn btn-primary mt-3">My Profile</a>
+    ';
+}
+?>
 
              
 

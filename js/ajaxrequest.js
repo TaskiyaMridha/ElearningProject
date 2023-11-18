@@ -1,3 +1,5 @@
+
+
 $(document).ready(function(){
     //Ajax Call form Already Exists Email Verification
     $("#stuemail").on ("Keypress blur", function(){
@@ -102,4 +104,34 @@ function clearStuRegField(){
     $("#statusMsg1").html(" ");
     $("#statusMsg2").html(" ");
     $("#statusMsg3").html(" ");
+}
+
+//Ajax call for student login verification
+
+function checkStuLogin() {
+    var stuLogEmail = $("#stuLogemail").val();
+    var stuLogpass = $("#stuLogpass").val();
+
+    $.ajax({
+        url: 'Student/addstudent.php',
+        method: "POST",
+        data: {
+            checklogmail: "checklogmail",
+            stuLogEmail: stuLogEmail,
+            stuLogpass: stuLogpass,
+        },
+        success: function(data) {
+            if(data == 0){
+               $("#statusLogMsg").html('<small class="alert alert-danger">Invalid Email ID or Password !</small>');
+            }else if(data == 1){
+                $("#statusLogMsg").html( 
+                    '<div class="spinner-border text-success" role="status"> </div>'
+                );
+
+                setTimeout(()=>{
+                    window.location.href = "index.php";
+                }, 1000)
+            }
+        }
+    });
 }
